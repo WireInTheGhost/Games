@@ -84,7 +84,7 @@ def validateInput(input):
 def updateGameBoard(input, player):
     """Keeps track of users moves"""
     #Update the array with new move
-    index = numToIndex(input)
+    index = numToIndex(input[0])
     gameBoard[index[0]][index[1]] = player
 
 def printDisplayBoard():
@@ -161,7 +161,7 @@ def updateDisplayBoard(num, player):
                [' ',' ',' ',' ',' ',' ','%','%',' ',' ',' ',' ',' ',' ']]}
 
     shape = shapes[player]
-    num = int(num)
+    num = int(num[0])
 
     offsets = [[0 ,0],[0 ,16],[0 ,32],
                [9 ,0],[9 ,16],[9 ,32],
@@ -176,6 +176,7 @@ def updateDisplayBoard(num, player):
 
 def numToIndex(num):
     """Returns index [i,j] for given 'square' on board"""
+    num = int(num[0])
     indexList = []
     for i in range (3):
         for j in range(3):
